@@ -1,0 +1,68 @@
+{
+    "name": "nodor",
+    "displayName": "nodor",
+    "description": "Extension from bud.Some private tips for vscode.",
+    "version": "0.0.1",
+    "publisher": "upidea",
+	"homepage": "https://github.com/upidea/nordor#readme",
+	"bugs": {
+		"url": "https://github.com/upidea/nordor/issues"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "J.Wang",
+		"email": "upidea@gmail.com",
+		"url": ""
+	},
+	"main": "./src/extension",
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:nodor.insertYesterday"
+    ],
+    "contributes": {
+		"commands": [
+			{
+				"command": "nodor.insertYesterday",
+				"title": "Insert YESTERDAY string as configed format."
+			}
+		],
+		"configuration": {
+			"title": "Configuration for Nodor",
+			"properties": {
+				"nodor.yesterday-format": {
+					"type": "string",
+					"default": "YYYYMMDD",
+					"description": "Date time format to be used."
+				}
+			}
+		},
+		"keybindings": [
+			{
+				"command": "nodor.insertYesterday",
+				"key": "shift+ctrl+/",
+				"mac": "shift+cmd+/",
+				"when": "editorTextFocus"
+			}
+		]
+    },
+    "icon": "images/icon.png",    
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.21",
+        "eslint": "^4.11.0",
+        "@types/node": "^8.10.25",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "date-format-lite": "^17.7.0"
+    }
+}
