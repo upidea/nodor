@@ -1,3 +1,4 @@
-node_modules
+node_modules/*
+!node_modules/date-format-lite/
 .vscode-test/
 *.vsix
