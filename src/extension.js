@@ -1,12 +1,9 @@
 const vscode_1 = require("vscode");
 require("date-format-lite");
 
-//# const DEFAULT_FORMAT = 'YYYY-MM-DD hh:mm:ss';
-const DEFAULT_FORMAT = 'YYYYMMDD';
-
 function getConfiguredFormat(format = 'yesterday-format') {
     const insertDateStringConfiguration = vscode_1.workspace.getConfiguration('nodor');
-    return insertDateStringConfiguration.get(format, DEFAULT_FORMAT);
+    return insertDateStringConfiguration.get(format, 'YYYYMMDD');
 }
 
 function getFormattedDateString(userFormat = getConfiguredFormat()) {
